@@ -20,6 +20,10 @@ class UserFixture extends Fixture
             $user->setPassword(password_hash('user' .$i, PASSWORD_BCRYPT));
             $user->setBirthdate(\DateTime::createFromFormat('Y/m/d h:i:s', (2000- $i).'/01/01 00:00:00'));
             
+//            Notre user sera référencé dans les autres fixtures sous la clé 
+//            user0 pouis user1 puis user2 etc
+            $this->addReference('user'.$i, $user);
+            
             //on demande au manager d'enregistrer l'utilisateur en base de données
             $manager ->persist($user);
        }
