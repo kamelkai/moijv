@@ -1,7 +1,16 @@
 {% extends "base.html.twig" %}
 
-{% block title %} Détail de l'utilisateur{% endblock %}
+{% block title %}Détail de l'utilisateur {{ user.firstname }} {{ user.lastname }}{% endblock %}
 
 {% block body %}
-{#    afficher les infos et les produits de l'utilisateur #}
+    <h1>Détail de l'utilisateur {{ user.firstname }} {{ user.lastname }}</h1>
+    
+    <h2>Liste des produits</h2>
+    
+    <ul>
+        {% for product in user.products %}
+            <li>{{ product.name }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ path('list_user') }}">Retour à la liste des utilisateurs</a>
 {% endblock %}

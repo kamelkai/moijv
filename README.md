@@ -1,4 +1,4 @@
 MoiJV
 =====
 
-MoiJV est un site de prêt de jeu vidéo communautaire et open-source.
+MoiJV est un site de prÃªt de jeu vidÃ©o communautaire et open-source.

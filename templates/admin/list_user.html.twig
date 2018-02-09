@@ -1,22 +1,22 @@
 {% extends "base.html.twig" %}
 
-{% block title%} - Liste des utilisateurs{% endblock %}
+{% block title %}Liste des utilisateurs{% endblock %}
+
 {% block body %}
     <h1>Bienvenue sur la liste des utilisateurs</h1>
 
-    {#Ceci est un commentaire twig#}
+    <!-- La syntaxe ci-dessous est un commentaire twig -->
     {# TODO generate user list #}
 
     <ul>
-        {#<?php foreach($users as $user) : ?>#}
+        {# <?php foreach($users as $user): ?> #}
         {% for user in users %}
             <li>
-                {#<?= htmlspecialchars($user->getFirstname()); ?>#}
-                {{ user.firstname }} {{ user.lastname }}
-
+                {#      <?= htmlspecialchars($user->getFirstname()); ?> #}
+                {{ user.firstname }} {{ user.lastname }} 
+                <a href="{{ path('user_details', { id : user.id }) }}">détails</a>
             </li>
-
-            {#<?php endforeach ; ?>#}
+            {# <?php endforeach; ?> #}
         {% endfor %}
     </ul>
 {% endblock %}
